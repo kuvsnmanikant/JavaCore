@@ -10,17 +10,14 @@ public class Assignment4Q2 {
     Assignment4Q2(int a,String b){totalPrice =a; status =b;}
 
     public int getTotalPrice() {return totalPrice;}
-	public String getStatus() {return status;}
+    public String getStatus() {return status;}
 
 
 	public static ArrayList<Assignment4Q2> listOfOrders(ArrayList<Assignment4Q2> orders) {
-		
-		 Predicate<Assignment4Q2> condition = e -> (e.getTotalPrice()<10000 || (!e.getStatus().equals("ACCEPTED") && !e.getStatus().equals("COMPLETED"))); 
-    	 orders.removeIf(condition);  	
+	 Predicate<Assignment4Q2> c = e -> (e.getTotalPrice()<10000 || (!e.getStatus().equals("ACCEPTED") && !e.getStatus().equals("COMPLETED"))); 
+    	 orders.removeIf(c);  	
     	 return orders;
     }
-
-
 
 
 
