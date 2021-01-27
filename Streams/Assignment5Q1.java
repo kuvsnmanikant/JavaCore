@@ -44,7 +44,7 @@ public class Assignment5Q1 {
 	
 	public static List<String> reverseSort(ArrayList<Fruit> fruits) {
 		List<String> l = new ArrayList<>(); 
-		fruits.stream().filter(c -> c.getCalories() < 100).forEach(e -> l.add(e.getName()));
+		fruits.stream().filter(c -> c.getCalories() < 100).sorted(Comparator.comparing(Fruit::getCalories).reversed()).forEach(e -> l.add(e.getName()));
 		return l;
 	}
 	
@@ -85,7 +85,7 @@ class Fruit {
 	public int getPrice() {return price;}
     public String getColor() {return color;}
 
-	public String toString(){ return "fruit name: "+this.name+"  calories: "+this.calories+"  price: "+this.price+"  color: "+this.color+"  ";}
+	public String toString(){ return "Fruit{name='"+this.name+"', calories="+this.calories+", price="+this.price+", color='"+this.color+"'}";}
 }
 
 
