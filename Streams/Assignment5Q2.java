@@ -1,8 +1,10 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 
 public class Assignment5Q2 {
@@ -93,7 +95,7 @@ public class Assignment5Q2 {
     
 
     public static Map<String, Integer> sortMaxCommentsByUser (List < News > news) {
-    	Map<String,Integer> map=new HashMap<>();
+    	Map<String,Integer> map=new LinkedHashMap<>();
     	for (News n: news) {
     		int c=0;
     		
@@ -103,7 +105,9 @@ public class Assignment5Q2 {
     		
     		map.put(n.getCommentByUser(),c);
     	}
-    	return map;
+	 Map<String,Integer> s = map.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,LinkedHashMap::new));
+   
+    	return s;
     }
     
     
@@ -143,10 +147,5 @@ class News {
 	public String getPostedByUser() {return postedByUser;}
 	public String getCommentByUser() {return commentByUser;}
 	public String getComment() {return comment;}
-
-	
 	
 }
-
-
-
