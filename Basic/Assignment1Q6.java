@@ -18,7 +18,7 @@ public class Assignment1Q6 {
 
         	String a = obj.loginUser(user,pass);
         
-        	if (a=="passed") {System.out.println("Welcome Ajay"); break;}
+        	if (a=="Welcome Ajay") {System.out.println("Welcome Ajay"); break;}
 
         	else if(a=="failed" && i!=2) {System.out.println("You have entered wrong credentials ,please enter the right credentials.");}
 
@@ -47,7 +47,7 @@ class Login{
 
     		if(password.equals(b)){
 
-    			return "passed";
+    			return "Welcome Ajay";
     		}
     	}
     	
