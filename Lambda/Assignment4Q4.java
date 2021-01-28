@@ -7,7 +7,7 @@ public class Assignment4Q4 {
 
     public ArrayList<String> removeOddLength(ArrayList<String> employeeList){
 
-		Predicate<String> pre = e -> e.length()>10; 
+		Predicate<String> pre = e -> e.length()<8; 
     	employeeList.removeIf(pre);  	
     	return employeeList;
     }
