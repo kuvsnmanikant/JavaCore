@@ -36,11 +36,11 @@ public class Assignment5Q4 {
         
         sortTransactions(list).forEach(k-> System.out.println(k));
         System.out.println("--------------------------------------------");
-        transactionsValuesDelhi(list).forEach(k-> System.out.println(k));
+        transaction3sValuesDelhi(list).forEach(k-> System.out.println(k));
         System.out.println("--------------------------------------------");
-        System.out.println("highest value : "+highestTransaction(list));
+        System.out.println("highest value : "+highestTransaction2(list));
         System.out.println("--------------------------------------------");
-        System.out.print("lowest value : "+smallestTransaction(list));
+        System.out.print("lowest value : "+smallestTransaction1(list));
     }
     
     
@@ -54,7 +54,7 @@ public class Assignment5Q4 {
     
     
 
-     public static List<Integer> transactionsValuesDelhi(List<Transaction> transactions) {
+    public static List<Integer> transaction3sValuesDelhi(List<Transaction> transactions) {
      	List<Integer> l = new ArrayList<>();
          transactions.stream().filter(c -> c.getTrader().getCity().equalsIgnoreCase("delhi")).forEach(e -> l.add(e.getValue()));
    	    return l;
@@ -62,7 +62,7 @@ public class Assignment5Q4 {
      
    
      
-     public static int highestTransaction(List<Transaction> transactions){
+    public static int highestTransaction2(List<Transaction> transactions){
      	List<Integer> l = new ArrayList<>();
      	transactions.stream().forEach(e -> l.add(e.getValue()));
 
@@ -72,7 +72,7 @@ public class Assignment5Q4 {
 
      
      
-     public static int smallestTransaction(List<Transaction> transactions){
+    public static int smallestTransaction1(List<Transaction> transactions){
      	List<Integer> l = new ArrayList<>();
      	transactions.stream().forEach(e -> l.add(e.getValue()));
 
@@ -98,7 +98,7 @@ class Trader {
 	public String getName() {return name;}
 	public String getCity() {return city;}
 	
-	public String toString(){ return "name: "+this.name+"  city: "+this.city+"  ";}
+	public String toString(){ return "{name='"+this.name+"', city='"+this.city+"'}";}
 
 
 }
@@ -124,7 +124,7 @@ class Transaction {
 	public int getYear() {return year;}
 	public int getValue() {return value;}
 	
-	public String toString(){ return this.trader+"  year: "+this.year+"  value: "+this.value;}
+	public String toString(){ return "Transaction{trader=Trader"+this.trader+", year="+this.year+", value="+this.value+"}";}
 
 }
 
