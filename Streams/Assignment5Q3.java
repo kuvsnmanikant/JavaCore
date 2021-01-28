@@ -97,7 +97,7 @@ class Trader {
 	public String getCity() {return city;}
 	
 	
-	public String toString(){ return "name: "+this.name+"  city: "+this.city+"  ";}
+	public String toString(){ return "Trader1{name='"+this.name+"', city='"+this.city+"'}";}
 
 }
 
