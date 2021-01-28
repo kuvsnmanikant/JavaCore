@@ -18,7 +18,7 @@ public class Assignment4Q1 {
     	return m.math(num1, num2);}
 
     public double division(int num1,int num2){ 
-    	Operation d= (int num,int nu)-> (nu==0)?0:num/nu; 
+    	Operation d= (int num,int nu)-> (nu==0)?0:num/(double)nu; 
     	return d.math(num1, num2);}
 
     	
