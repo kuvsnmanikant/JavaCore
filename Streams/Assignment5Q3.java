@@ -39,9 +39,11 @@ public class Assignment5Q3 {
        
        
        public static List<String> printUniqueCities (List <Trader> traders) {
-           List<String> a= new ArrayList<>();
+         /*  List<String> a= new ArrayList<>();
            Set<String> s= traders.stream().map(p -> p.getCity()).collect(Collectors.toSet());
-           a = s.stream().collect(Collectors.toList()); 
+           a = s.stream().collect(Collectors.toList()); */
+	       
+	   List<String> a=(List<String>) traders.stream().map(p->p.getCity()).distinct().collect(Collectors.toList());    
            return a;
        }
        
