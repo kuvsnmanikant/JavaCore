@@ -10,6 +10,11 @@ public class Assignment4Q3 {
     	con.accept(10);
     }
 
+    static int modifyValue(int a, Function<Integer, Integer> b)
+    { 
+      return b.apply(a);
+    }
+
 
 
     static class Product { 
