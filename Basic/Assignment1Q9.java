@@ -24,15 +24,17 @@ public class Assignment1Q9 {
     		ar[i]= new Student(sa,sb,sc);
 
     	}
+    	
+    	Student s = new Student();
 
-    	System.out.println("total marks of all students : "+ar[0].studentsTotalMarksInAllSubjects(ar));
-    	System.out.println("total average of all students : "+ar[0].studentsAverageMarksInAllSubjects(ar));
+    	System.out.println("total marks of all students : "+s.studentsTotalMarksInAllSubjects(ar));
+    	System.out.println("total average of all students : "+s.studentsAverageMarksInAllSubjects(ar));
 
         System.out.println("------------------------------------------------------------");
 
-        int[] a=ar[0].subjectWiseMarks(ar,"subjectA");
-        int[] b=ar[0].subjectWiseMarks(ar,"subjectB");
-        int[] c=ar[0].subjectWiseMarks(ar,"subjectC");
+        int[] a=s.subjectWiseMarks(ar,"subjectA");
+        int[] b=s.subjectWiseMarks(ar,"subjectB");
+        int[] c=s.subjectWiseMarks(ar,"subjectC");
 
         System.out.print("subjectA marks of all students : "); printarr(a);
         System.out.print("subjectB marks of all students : "); printarr(b);
@@ -40,15 +42,15 @@ public class Assignment1Q9 {
 
         System.out.println("------------------------------------------------------------");
 
-        System.out.println("subjectA Total marks of all students : "+ar[0].subjectATotalByStudents(a));
-        System.out.println("subjectB Total marks of all students : "+ar[0].subjectBTotalByStudents(b));
-        System.out.println("subjectC Total marks of all students : "+ar[0].subjectCTotalByStudents(c));
+        System.out.println("subjectA Total marks of all students : "+s.subjectATotalByStudents(a));
+        System.out.println("subjectB Total marks of all students : "+s.subjectBTotalByStudents(b));
+        System.out.println("subjectC Total marks of all students : "+s.subjectCTotalByStudents(c));
 
         System.out.println("------------------------------------------------------------");
 
-        System.out.println("subjectA average of all students : "+ar[0].subjectAAverageByStudents(a));
-        System.out.println("subjectB average of all students : "+ar[0].subjectBAverageByStudents(b));
-        System.out.println("subjectC average of all students : "+ar[0].subjectCAverageByStudents(c));
+        System.out.println("subjectA average of all students : "+s.subjectAAverageByStudents(a));
+        System.out.println("subjectB average of all students : "+s.subjectBAverageByStudents(b));
+        System.out.println("subjectC average of all students : "+s.subjectCAverageByStudents(c));
 
 
 
@@ -66,6 +68,8 @@ class Student {
 
     Student(int a, int b, int c){subjectA=a; subjectB=b; subjectC=c;}
 
+
+    public Student() {super();}
 
 
     public int studentsTotalMarksInAllSubjects(Student[] students) {
@@ -99,10 +103,11 @@ class Student {
     public int subjectBTotalByStudents(int[] marks) {return subjectTotalByStudents(marks);}
     public int subjectCTotalByStudents(int[] marks) {return subjectTotalByStudents(marks);}
 
+    public double subjectAverageByStudents(int[] marks) {return subjectTotalByStudents(marks)/3;}
 
 
-    public double subjectAAverageByStudents(int[] marks) {return subjectTotalByStudents(marks)/3;}
-    public double subjectBAverageByStudents(int[] marks) {return subjectTotalByStudents(marks)/3;}
-    public double subjectCAverageByStudents(int[] marks) {return subjectTotalByStudents(marks)/3;}
+    public double subjectAAverageByStudents(int[] marks) {return subjectAverageByStudents(marks);}
+    public double subjectBAverageByStudents(int[] marks) {return subjectAverageByStudents(marks);}
+    public double subjectCAverageByStudents(int[] marks) {return subjectAverageByStudents(marks);}
 
 }   
