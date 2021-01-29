@@ -50,10 +50,11 @@ class DateClass {
 public class Assignment3Q4 {
 
     public String getEmployee(HashMap<DateClass, String> hm,String employeeName){
-        String s=null;
+        String s="";
         for (Map.Entry<DateClass, String> entry : hm.entrySet()) {
-
-            if(entry.getValue().equals(employeeName)){ s=("employeeName: "+employeeName + "  " + entry.getKey()); break;}
+  
+            if(entry.getValue().equals(employeeName)){ s=("employeeName: "+employeeName + "  " + entry.getKey()); }
+            else { s="get method fails"; } 
         }
     return s;
     }
@@ -92,7 +93,7 @@ public class Assignment3Q4 {
         
         Assignment3Q4 o=new Assignment3Q4();
         System.out.println(o.getEmployee(hm,nae));
+        
 
     }
 }
-
