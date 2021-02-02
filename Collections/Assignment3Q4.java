@@ -49,10 +49,8 @@ public class Assignment3Q4 {
     	String s="get method fails";
       
         for (Map.Entry<DateClass, String> entry : hm.entrySet()) {
-        	System.out.println(entry.getValue());
-        	System.out.println(employeeName+"  lll");
+        
             if(entry.getValue().equals(employeeName)){ s=entry.getValue();break;}
-         
             
         }
     return s;
